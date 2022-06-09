@@ -23,10 +23,12 @@ def translitteration(text: str, genre: str)->str:
     """
     cyrillic_alphabet = "абвгдеёжзийклмнопрстуфхцчшщыюяъьэАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЫЮЯЪЬЭ"
     latin_translitteration = "abvgdeëžzijklmnoprstufhcčšŝyûâʺʹèABVGDEËŽZIJKLMNOPRSTUFHCČŠŜYÛÂʺʹÈ"
-    simple_lower = "a b v g d ié io j z i ï k l m n o p r s t ou f kh ts tch ch chtch y iou ia ʺ ʹ è"
-    latin_simple = " ".join([simple_lower, simple_lower.upper()]).split(" ")
+    simple_lower = "a b v g d ié io j z i ï k l m n o p r s t ou f kh ts tch ch chtch y iou ia ʺ ʹ è".split(' ')
+    simple_capitalized = list(map(lambda phoneme: phoneme.capitalize(), simple_lower))
+    simple_latin = simple_lower + simple_capitalized
+    #latin_simple = " ".join([simple_lower, simple_lower.upper()]).split(" ")
     
-    trans_dic = {key: {"ISO 9": value1, 'sans diacritiques': value2} for key, value1, value2 in zip(cyrillic_alphabet, latin_translitteration, latin_simple)}
+    trans_dic = {key: {"ISO 9": value1, 'sans diacritiques': value2} for key, value1, value2 in zip(cyrillic_alphabet, latin_translitteration, simple_latin)}
 
     for character in text:
         if character in trans_dic:
