@@ -22,14 +22,19 @@ def translitteration(text: str, genre: str)->str:
         str: transliterated text
     """
     cyrillic_alphabet = "абвгдеёжзийклмнопрстуфхцчшщыюяъьэАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЫЮЯЪЬЭ"
+    # ISO 9 version :
     latin_translitteration = "abvgdeëžzijklmnoprstufhcčšŝyûâʺʹèABVGDEËŽZIJKLMNOPRSTUFHCČŠŜYÛÂʺʹÈ"
+    # lowercase version whitout diacritics :
     simple_lower = "a b v g d ié io j z i ï k l m n o p r s t ou f kh ts tch ch chtch y iou ia ʺ ʹ è".split(' ')
+    # Capitalized version whitout diacritics :
     simple_capitalized = list(map(lambda phoneme: phoneme.capitalize(), simple_lower))
-    simple_latin = simple_lower + simple_capitalized
-    #latin_simple = " ".join([simple_lower, simple_lower.upper()]).split(" ")
     
+    simple_latin = simple_lower + simple_capitalized
+    
+    # transliteration dictionnary :
     trans_dic = {key: {"ISO 9": value1, 'sans diacritiques': value2} for key, value1, value2 in zip(cyrillic_alphabet, latin_translitteration, simple_latin)}
 
+    # replace cyrillic characters:
     for character in text:
         if character in trans_dic:
             text = text.replace(character, trans_dic[character][genre])
