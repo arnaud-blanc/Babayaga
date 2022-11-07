@@ -1,12 +1,5 @@
 import streamlit as st
 
-with open('style.css') as style:
-    st.markdown(f"<style>{style.read()}</style>",unsafe_allow_html=True)
-
-st.title('Baba Yaga -  Баба Яга')
-
-txt = st.timport streamlit as st
-
 with open("style.css") as style:
     st.markdown(f"<style>{style.read()}</style>", unsafe_allow_html=True)
 
