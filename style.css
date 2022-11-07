@@ -1,3 +1,28 @@
-.css-1q1n0ol{
+h1 {
+    text-align: center;
+}
+
+.css-183lzff.eyqtai90 {
+    text-align: justify;
+    white-space: normal;
+}
+
+a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+a:hover {
+    color: green;
+    text-decoration: none;
+}
+
+a:active {
+    color: gold;
+    text-decoration: none;
+}
+
+.css-1lsmgbg.egzxvld0 {
     display: none;
 }
