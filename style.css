@@ -62,15 +62,15 @@ a:active {
     flex-direction: row-reverse;
 }
 
-#bui2__anchor button {
+button[kind="secondaryFormSubmit"] {
     border-color: #9e7cca;
 }
 
-#bui2__anchor button:hover {
+button[kind="secondaryFormSubmit"]:hover {
     background-color: #beb8c7;
 }
 
-#bui2__anchor button:active {
+button[kind="secondaryFormSubmit"]:active {
     background-color: #9e7cca;
 }
 
