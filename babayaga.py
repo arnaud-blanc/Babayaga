@@ -1,5 +1,11 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="babayaga",
+    page_icon="Images/favicon.ico",
+    layout="centered",
+)
+
 with open("style.css") as style:
     st.markdown(f"<style>{style.read()}</style>", unsafe_allow_html=True)
 
@@ -20,20 +26,26 @@ st.code(
     """Это приложение транслитерации все еще рудиментарно! 
 Причина его существования - любопытство.
 Я быстро закодировал его, чтобы познакомиться со Streamlit 🚀.
-Она будет развиваться вместе с моими открытиями в области искусственного интеллекта.
+Он будет развиваться вместе с моими открытиями в области искусственного интеллекта и моим пристрастием к обработке естественного языка (NLP).
 Я также пойду дальше, научившись использовать FastApi и кодировать кириллическую клавиатуру 😉.
-У меня много идей..."""
+У меня много идей...
+
+Переведено с помощью www.DeepL.com/Translator (бесплатная версия)"""
 )
 
-st.markdown("[📚    traduction  ⁉️](https://link.infini.fr/traduction)")
+st.markdown("[📚    traduction  ⁉️](https://link.infini.fr/translation_for_the_curious)")
 
 with st.form("my_form", clear_on_submit=True):
-   txt = st.text_area(
-    "Texte russe à translittérer :", placeholder="Здравствуй мир!", key="russian_text"
+    txt = st.text_area(
+        "Texte russe à translittérer :",
+        placeholder="Здравствуй мир!",
+        key="russian_text",
     )
 
-   # Every form must have a submit button.
-   submitted = st.form_submit_button("🪄", help="translittérer / effacer la translittération")
+    # Every form must have a submit button.
+    submitted = st.form_submit_button(
+        "🪄", help="translittérer / effacer la translittération"
+    )
 
 genre = st.radio(
     "Type de translittération :", ("ISO 9", "sans diacritiques"), horizontal=True
