@@ -10,7 +10,7 @@ _Application for transliteration of Russian into Latin characters_
 
 In the same directory as `requirements.txt` run
 
->`$ pip install -e requirements.txt`
+>`$ pip install -r requirements.txt`
 
 * Run local Streamlit server:
 
