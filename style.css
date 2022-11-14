@@ -1,5 +1,20 @@
+::selection {
+    color: #715792;
+    background: #d1d3d4;
+  }
+
 h1 {
     text-align: center;
+    color: #702d17;
+    display: block;
+}
+
+h1::before {
+    content: "🔥🔥🔥🔥";
+}
+
+h1::after {
+    content: "🔥🔥🔥🔥";
 }
 
 .css-183lzff.eyqtai90 {
@@ -23,6 +38,43 @@ a:active {
     text-decoration: none;
 }
 
-.css-1lsmgbg.egzxvld0 {
-    display: none;
+.css-12ttj6m {
+    border-color: #9e7cca;
+    border-width: 2px;
 }
+
+.stTextArea > label {
+    color: #715792;
+    font-weight: 600;
+}
+
+.stTextArea textarea {
+    background-color: #9e7cca;
+    color: #fff;
+}
+
+.stTextArea textarea::placeholder {
+    color: rgb(255, 250, 250);
+}
+
+.row-widget.stButton {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#bui2__anchor button {
+    border-color: #9e7cca;
+}
+
+#bui2__anchor button:hover {
+    background-color: #beb8c7;
+}
+
+#bui2__anchor button:active {
+    background-color: #9e7cca;
+}
+
+button.css-1x8cf1d.edgvbvh10 {
+    background-color: #d1d3d4;
+}
+

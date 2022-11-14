@@ -13,7 +13,7 @@ En plus de me former au sciences des données, je suis chanteur lyrique et je co
 
 L'application transforme les caractères *cyrilliques* en caractères *latins*.
 
-Essayez en copiant la cellule suivante ! ⤵️"""
+Essayez en copiant-collant la cellule suivante ! ⤵️"""
 )
 
 st.code(
@@ -27,9 +27,13 @@ st.code(
 
 st.markdown("[📚    traduction  ⁉️](https://link.infini.fr/traduction)")
 
-txt = st.text_area(
+with st.form("my_form", clear_on_submit=True):
+   txt = st.text_area(
     "Texte russe à translittérer :", placeholder="Здравствуй мир!", key="russian_text"
-)
+    )
+
+   # Every form must have a submit button.
+   submitted = st.form_submit_button("🪄", help="translittérer / effacer la translittération")
 
 genre = st.radio(
     "Type de translittération :", ("ISO 9", "sans diacritiques"), horizontal=True
@@ -86,4 +90,4 @@ if txt:
         texte_latin,
         help="La translittération sera téléchargée au format texte.",
     )
-result = st.text(texte_latin)
+    st.code(texte_latin, language=None)
